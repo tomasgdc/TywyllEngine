@@ -8,6 +8,7 @@ Run cmake and make build folder to Build.
 
 #Is it still in development?
 Sadly, but not. Due to a lot of problems and stupid decisions, I decided to refactor everything. Well, almost everything. The worst part is the Renderer API, which does not work properly and do not heave needed features. Due to this, decided to stop working on engine and start working on Renderer API.
+The whole idea of an engine is to make it simple and easy to understand instead of going trhough files and having no idea what the hell is going on. A good example of good engine architecture that I like is CryEngine.
 
 #What is the current progress of Renderer API
 The Renderer API will be using Vulkan API and it is currently under development. Will be posted on different repository.
