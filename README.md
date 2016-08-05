@@ -7,6 +7,14 @@ Sadly, but not. Due to a lot of problems and stupid decisions, I decided to refa
 #What is the current progress of Renderer API
 The Renderer API will be using Vulkan API and it is currently under development. Will be posted on different repository.
 
+#Anything works on current Renderer API?
+Yup, for example:
+- Wavefront file rendering (works just with v,n,uv)
+- MD5 Skeletal animation rendering
+- Font rendering
+- ImgGui
+- There are more things that do not work as the amount of things that work...
+
 #ThirdParty libraries used
 > - Bullet3 - For Physics
 > - FreeType - For font rendering
