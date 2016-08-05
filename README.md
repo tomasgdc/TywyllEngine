@@ -1,6 +1,11 @@
 # TywyllEngine
 OpenGL Game Engine  that will work in the future... maybe... when will fix problems with architecture and renderer.......
 
+#Is it still in development?
+Sadly, but not. Due to a lot of problems and stupid decisions, I decided to refactor everything. Well, almost everything. The worst part is the Renderer API, which does not work properly and do not heave needed features. Due to this, decided to stop working on engine and start working on Renderer API.
+
+#What is the current progress of Renderer API
+The Renderer API will be using Vulkan API and it is currently under development. Will be posted on different repository.
 
 #ThirdParty libraries used
 > - Bullet3 - For Physics
