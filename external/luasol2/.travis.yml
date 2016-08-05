@@ -1,0 +1,139 @@
+language: cpp
+
+git:
+    depth: 5
+
+matrix:
+  include: 
+    - os: linux
+      env: COMPILER=g++-4.9 LUA_VERSION=lua52
+      compiler: gcc
+      addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          packages:
+          - gcc-4.9
+          - g++-4.9
+          - ninja-build
+          - liblua5.2-dev
+
+    # gcc-5
+    - os: linux
+      env: COMPILER=g++-4.9 LUA_VERSION=luajit51
+      compiler: gcc
+      addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          packages:
+          - gcc-4.9
+          - g++-4.9
+          - ninja-build
+          - libluajit-5.1-dev
+
+    # gcc-5
+    - os: linux
+      env: COMPILER=g++-5 LUA_VERSION=lua52
+      compiler: gcc
+      addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          packages:
+          - gcc-5
+          - g++-5
+          - ninja-build
+          - liblua5.2-dev
+
+    # gcc-5
+    - os: linux
+      env: COMPILER=g++-5 LUA_VERSION=luajit51
+      compiler: gcc
+      addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          packages:
+          - gcc-5
+          - g++-5
+          - ninja-build
+          - libluajit-5.1-dev
+
+    # clang
+    - os: linux
+      env: COMPILER=clang++-3.5 LUA_VERSION=lua52
+      compiler: clang
+      addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          - llvm-toolchain-precise-3.5
+          packages:
+          - gcc-4.9
+          - g++-4.9
+          - clang-3.5
+          - ninja-build
+          - liblua5.2-dev
+
+    - os: linux
+      env: COMPILER=clang++-3.6 LUA_VERSION=lua52
+      compiler: clang
+      addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          - llvm-toolchain-precise-3.6
+          packages:
+          - clang-3.6
+          - ninja-build
+          - liblua5.2-dev
+
+    - os: linux
+      env: COMPILER=clang++-3.6 LUA_VERSION=luajit51
+      compiler: clang
+      addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          - llvm-toolchain-precise-3.6
+          packages:
+          - clang-3.6
+          - ninja-build
+          - libluajit-5.1-dev
+
+    - os: osx
+      osx_image: xcode7
+      compiler: gcc
+      env: COMPILER=g++-4.9 LUA_VERSION=lua53
+
+    - os: osx
+      osx_image: xcode7
+      compiler: gcc
+      env: COMPILER=g++-5 LUA_VERSION=lua53
+
+    - os: osx
+      osx_image: xcode7
+      compiler: clang
+      env: COMPILER=appleclang LUA_VERSION=lua53
+
+  allow_failures:
+    - os: osx
+      compiler: clang 
+
+before_install:
+- source ./install.deps.sh
+
+install:
+- install_os_deps
+
+script:
+- echo "Configuration info:"
+- export_compiler_vars
+- ninja --version
+- ./bootstrap.py --ci && ninja && ninja examples
+
+notifications:
+    email:
+        on_success: change
+        on_failure: change
