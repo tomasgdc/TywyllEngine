@@ -1,6 +1,11 @@
 # TywyllEngine
 OpenGL Game Engine  that will work in the future... maybe... when will fix problems with architecture and renderer.......
 
+#How To Build
+Currently works only under Visual Studio 2015 version.
+Run cmake and make build folder to Build.
+
+
 #Is it still in development?
 Sadly, but not. Due to a lot of problems and stupid decisions, I decided to refactor everything. Well, almost everything. The worst part is the Renderer API, which does not work properly and do not heave needed features. Due to this, decided to stop working on engine and start working on Renderer API.
 
@@ -25,9 +30,11 @@ Yup, for example:
 > - TinyXml2 - For Xml Parsing
 > - Zlib - the name says it all
 
-#How To Build
-Currently works only under Visual Studio 2015 version.
-Run cmake and make build folder to Build.
+#Credits
+Thanks to the authors of these books:
+- Game Engine Architecture
+- Game Code Complete 4
+- Game Programming Patterns
 
 
 
