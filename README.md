@@ -32,9 +32,19 @@ Yup, for example:
 
 #Credits
 Thanks to the authors of these books:
-- Game Engine Architecture
-- Game Code Complete 4
-- Game Programming Patterns
+> - Game Engine Architecture
+> - Game Code Complete 4
+> - Game Programming Patterns
+
+Thanks to the authors of these libraries:
+> - Bullet3
+> - FreeType
+> - Glew
+> - Glm
+> - Lua
+> - LuaSol2
+> - TinyXml2
+> - Zlib
 
 
 
